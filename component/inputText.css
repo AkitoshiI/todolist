@@ -1,0 +1,35 @@
+#textContainer {
+  height: 100px;
+  display: flex;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-color: gray;
+  justify-content: center;
+  align-items: center;
+}
+#textBox {
+  width: 320px;
+  height: 30px;
+  border-style: none none solid none;
+  border-color: gray;
+  font-size: 18px;
+}
+#textBox:focus {
+  border-style: none none solid none;
+  border-color: black;
+  outline: none;
+}
+#addButton {
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: inherit;
+  border-color: inherit;
+  border-style: none;
+  outline: inherit;
+  background-image: url(../svg/add-circle-outline.svg);
+}
+#addButton:hover {
+  background-color: rgba(213, 213, 213, 0.596);
+}

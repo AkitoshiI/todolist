@@ -1,0 +1,38 @@
+.todoContainer {
+  display: flex;
+  width: 400px;
+  min-height: 50px;
+  height: auto;
+  border-color: gray;
+  border-style: solid;
+  margin: 5px auto;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+.message {
+  text-align: left;
+  display: block;
+  width: auto;
+  margin: auto 0 auto 20px;
+  font-size: 28px;
+  order: 0;
+  overflow-wrap: break-word;
+  flex-basis: auto;
+}
+.delButton {
+  width: 45px;
+  height: 45px;
+  margin: auto 10px;
+  order: 1;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background-color: inherit;
+  border-color: inherit;
+  border-style: none;
+  outline: inherit;
+  background-image: url(../svg/trash-outline.svg);
+}
+.delButton:hover {
+  background-color: whitesmoke;
+}
