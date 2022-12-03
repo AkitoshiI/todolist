@@ -17,7 +17,7 @@ export const Inputtext = () => {
       setTodo([
         ...todo,
         {
-          key: todoLog.length,
+          key: todoLog.length, //id
           message: text,
         },
       ]);
@@ -28,7 +28,9 @@ export const Inputtext = () => {
   };
   //Todoリストの削除
   const deleteTodo = (index) => {
+    console.log(todo);
     const todoLog = todo.filter((event) => event.key !== index); //削除する項目以外を抽出
+    console.log(todoLog);
     //console.log(todo.filter((event) => event.key !== index));
     //keyの更新
     for (let j = 0; j < todoLog.length; j++) {
@@ -39,7 +41,7 @@ export const Inputtext = () => {
   };
 
   return (
-    <div>
+    <div id="container">
       <div id="textContainer">
         <input
           id="textBox"
@@ -49,6 +51,7 @@ export const Inputtext = () => {
         />
         <button id="addButton" onClick={pushTodo}></button>
       </div>
+
       <Todo todo={todo} deleteTodo={(index) => deleteTodo(index)} />
     </div>
   );
