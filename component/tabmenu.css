@@ -1,0 +1,31 @@
+#tabConponent {
+  display: flex;
+  justify-content: space-around;
+}
+#tabConponent :first-of-type {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  border-radius: 20px 0 0 0;
+  border-bottom: solid 0.5px;
+}
+#tabConponent :last-of-type {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  border-radius: 0 20px 0 0;
+  border-bottom: solid 0.5px;
+  border-left: solid 0.5px;
+}
+#tab {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  border-bottom: solid 0.5px;
+}
+#tab:hover {
+  background-color: rgb(170, 170, 170);
+}
+#tabConponent #tab.active {
+  border-bottom: none;
+}

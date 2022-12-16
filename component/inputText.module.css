@@ -25,6 +25,7 @@
   border-style: none none solid none;
   border-color: gray;
   font-size: 18px;
+  border-radius: 0;
 }
 #textBox:focus {
   border-style: none none solid none;

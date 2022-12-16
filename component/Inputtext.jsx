@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Todo } from "../screen/Todo";
-import "./inputText.css";
+import classes from "./inputText.module.css";
 
 export const Inputtext = () => {
   const [text, setText] = useState(""); //テキストボックスの中身の管理
   const [todo, setTodo] = useState([]); //Todoリストの管理
+  const [login, setLogin] = useState(false); //ログイン要素
   //テキストボックスの中身をコピー
   const changeText = (event) => {
     setText(event.target.value);
@@ -21,7 +22,7 @@ export const Inputtext = () => {
           message: text,
         },
       ]);
-      document.getElementById("textBox").value = ""; //テキストボックスのリセット
+      document.getElementById(classes.textBox).value = ""; //テキストボックスのリセット
       console.log(todo);
       setText(""); //テキストのリセット
     }
@@ -41,15 +42,15 @@ export const Inputtext = () => {
   };
 
   return (
-    <div id="container">
-      <div id="textContainer">
+    <div id={classes.container}>
+      <div id={classes.textContainer}>
         <input
-          id="textBox"
+          id={classes.textBox}
           type="text"
           placeholder="テキストを入力・・・"
           onChange={(event) => changeText(event)}
         />
-        <button id="addButton" onClick={pushTodo}></button>
+        <button id={classes.addButton} onClick={pushTodo}></button>
       </div>
 
       <Todo todo={todo} deleteTodo={(index) => deleteTodo(index)} />
