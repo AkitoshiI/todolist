@@ -1,7 +1,7 @@
 import React from "react";
 import "./todo.css";
 
-export const Todo = (props) => {
+export const Todo = ({ todo, deleteTodo }) => {
   /*マウスストーカテスト*/
   /*
   const mauseStalker = {
@@ -30,13 +30,13 @@ export const Todo = (props) => {
   /*マウスストーカテスト*/
 
   //todoリストの描写
-  const todoList = props.todo.map((index) => {
+  const todoList = todo.map((index) => {
     return (
       <div className="todoContainer" key={index.key}>
         <p className="message">{index.message}</p>
         <button
           className="delButton"
-          onClick={(event) => props.deleteTodo(index.key)}
+          onClick={(event) => deleteTodo(index.key)}
         ></button>
       </div>
     );

@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import "./tabmenu.css";
+import styles from "./tabmenu.module.css";
 import { SignUp } from "../screen/SignUp";
 import { LoginSc } from "../screen/LoginSc";
-export const TabMenu = (props) => {
-  const tabarr = props.tablist;
-  const [active, setActive] = useState(tabarr[0]);
+import { hover } from "@testing-library/user-event/dist/hover";
+export const TabMenu = ({ tablist, loginUser, createUser }) => {
+  //const { tablist } = props;
+  const tabArray = tablist;
+  const [active, setActive] = useState(tabArray[0]);
   const tab = () => {
     return (
-      <div id="tabConponent">
-        {tabarr.map((index) => (
+      <div id={styles.tabContainer}>
+        {tabArray.map((index) => (
           <div
-            id="tab"
-            className={active === index ? "active" : ""}
+            id={styles.tab}
+            className={active === index ? styles.active : ""}
             onClick={() => setActive(index)}
           >
             {index}
@@ -23,10 +25,18 @@ export const TabMenu = (props) => {
   const message = () => {
     return (
       <div>
-        {active === tabarr[0] ? (
-          <div>{props.login}</div>
+        {active === tabArray[0] ? (
+          <div>
+            <LoginSc
+              loginUser={(email, password) => loginUser(email, password)}
+            />
+          </div>
         ) : (
-          <div>{props.signup}</div>
+          <div>
+            <SignUp
+              createUser={(email, password) => createUser(email, password)}
+            />
+          </div>
         )}
       </div>
     );
@@ -39,3 +49,45 @@ export const TabMenu = (props) => {
     </div>
   );
 };
+/*
+const styles = {
+  tabContainer: {
+    display: "flex",
+    justifyContent: "space-around",
+    firstOfType: {
+      width: "100%",
+      height: "100%",
+      padding: "10px 0",
+      borderRadius: "20px 0 0 0",
+      borderBottom: "solid 0.5px",
+    },
+    lastOfType: {
+      width: "100%",
+      height: "100%",
+      padding: "10px 0",
+      borderRadius: "0 20px 0 0",
+      borderBottom: "solid 0.5px",
+      borderLeft: "solid 0.5px",
+    },
+  },
+  tab: {
+    width: "100%",
+    height: "100%",
+    padding: "10px 0",
+    borderBottom: "solid 0.5px",
+    hover: {
+      width: "100%",
+      height: "100%",
+      padding: "10px 0",
+      borderBottom: "solid 0.5px",
+      backgrounColor: "rgb(170, 170, 170)",
+    },
+    active: {
+      width: "100%",
+      height: "100%",
+      padding: "10px 0",
+      borderBottom: "none",
+    },
+  },
+};
+*/

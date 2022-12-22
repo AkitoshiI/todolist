@@ -1,15 +1,15 @@
-#tabConponent {
+#tabContainer {
   display: flex;
   justify-content: space-around;
 }
-#tabConponent :first-of-type {
+#tabContainer :first-of-type {
   width: 100%;
   height: 100%;
   padding: 10px 0;
   border-radius: 20px 0 0 0;
   border-bottom: solid 0.5px;
 }
-#tabConponent :last-of-type {
+#tabContainer :last-of-type {
   width: 100%;
   height: 100%;
   padding: 10px 0;
@@ -26,6 +26,6 @@
 #tab:hover {
   background-color: rgb(170, 170, 170);
 }
-#tabConponent #tab.active {
+#tabContainer #tab.active {
   border-bottom: none;
 }

@@ -1,14 +1,14 @@
 import react, { useState } from "react";
 import { isCompositeComponent } from "react-dom/test-utils";
-import "./login.css";
+import classes from "./login.module.css";
 
-export const LoginSc = (props) => {
+export const LoginSc = ({ loginUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <div id="container">
-      <div id="textBox">
+    <div id={classes.container}>
+      <div id={classes.textBox}>
         <label>email</label>
         <input
           type="text"
@@ -18,7 +18,7 @@ export const LoginSc = (props) => {
           }}
         />
       </div>
-      <div id="textBox">
+      <div id={classes.textBox}>
         <label>password</label>
         <input
           type="password"
@@ -29,8 +29,8 @@ export const LoginSc = (props) => {
         />
       </div>
       <button
-        id="loginButton"
-        onClick={() => props.createUser(email, password)}
+        id={classes.loginButton}
+        onClick={() => loginUser(email, password)}
       >
         OK
       </button>

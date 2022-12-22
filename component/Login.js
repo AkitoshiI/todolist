@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../firebaseConfig";
-import { SignUp } from "../screen/SignUp";
-import { LoginSc } from "../screen/LoginSc";
 import { TabMenu } from "./TabMenu";
 import classes from "./log.module.css";
 
@@ -17,7 +15,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 export const Login = () => {
-  const tablist = ["新規作成", "サインイン"];
+  const tablist = ["サインイン", "新規作成"];
 
   const navigate = useNavigate();
   const createUser = (email, password) => {
@@ -61,7 +59,19 @@ export const Login = () => {
     <div id={classes.login}>
       <TabMenu
         tablist={tablist}
-        login={
+        createUser={(email, password) => {
+          createUser(email, password);
+        }}
+        loginUser={(email, password) => {
+          loginUser(email, password);
+        }}
+      />
+    </div>
+  );
+};
+
+/*
+login={
           <div>
             <LoginSc
               createUser={(email, password) => {
@@ -72,12 +82,7 @@ export const Login = () => {
         }
         signup={
           <SignUp
-            loginUser={(email, password) => {
-              loginUser(email, password);
-            }}
+            
           />
         }
-      />
-    </div>
-  );
-};
+*/

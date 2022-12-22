@@ -11,4 +11,5 @@ export const firebaseConfig = {
   messagingSenderId: "917667282130",
   appId: "1:917667282130:web:70339ecb8cf0655ace810b",
   measurementId: "G-KDTGX2K1JQ",
+  databaseURL: "https://test-myreact.asia-northeast1.firebaseio.com",
 };

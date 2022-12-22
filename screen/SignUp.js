@@ -1,24 +1,24 @@
 import react, { useState } from "react";
 import { isCompositeComponent } from "react-dom/test-utils";
-import "./login.css";
+import classes from "./login.module.css";
 
-export const SignUp = (props) => {
+export const SignUp = ({ createUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <div id="container">
-      <div id="textBox">
+    <div id={classes.container}>
+      <div id={classes.textBox}>
         <label>email</label>
         <input
           type="text"
-          id="email"
+          id={classes.email}
           onChange={(event) => {
             setEmail(event.target.value);
           }}
         />
       </div>
-      <div id="textBox">
+      <div id={classes.textBox}>
         <label>password</label>
         <input
           type="password"
@@ -28,7 +28,10 @@ export const SignUp = (props) => {
           }}
         />
       </div>
-      <button id="loginButton" onClick={() => props.loginUser(email, password)}>
+      <button
+        id={classes.loginButton}
+        onClick={() => createUser(email, password)}
+      >
         OK
       </button>
     </div>
